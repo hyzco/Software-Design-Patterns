@@ -1,6 +1,5 @@
 import { Environments } from "../../../main";
 import { ILogStorage } from "./ILogStorage";
-import AbstractLogger from "./Logger";
 import CloudLogger from "./loggers/CloudLogger";
 import DbLogger from "./loggers/DbLogger";
 import FileLogger from "./loggers/FileLogger";

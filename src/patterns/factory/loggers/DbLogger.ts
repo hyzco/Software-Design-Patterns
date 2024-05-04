@@ -1,5 +1,3 @@
-
-
 import { EStorageType, ILogStorage } from "../ILogStorage";
 import Logger from "../Logger";
 
