@@ -12,7 +12,12 @@ class FactoryPattern {
 
         this.databaseFactory = new DatabaseFactory(DbEnum.mssql);
         this.databaseFactory.connectToDatabase();
-        this.databaseFactory.queryFactory.createQuery().execute("Query");
+
+        const databaseQuery = this.databaseFactory.createQuery();
+        const databaseResult = this.databaseFactory.createResult();
+
+        databaseQuery.execute("SOME SQL QUERY");
+        databaseResult.getResult();
     }
 }
 

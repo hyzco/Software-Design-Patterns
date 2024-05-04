@@ -1,4 +1,5 @@
 import { DatabaseConnectionFactory, DatabaseQueryFactory, DatabaseResultFactory } from "./abstract/IDbFactory";
+import { DatabaseQuery, DatabaseResult } from "./abstract/IDbProductFactory";
 import { Db2ConnectionFactory, Db2QueryFactory, Db2ResultFactory } from "./concrete/Db2Factory";
 import { MsSqlConnectionFactory, MsSqlQueryFactory, MsSqlResultFactory } from "./concrete/MssqlFactory";
 export enum DbEnum { mssql, db2 }
@@ -29,6 +30,14 @@ class DatabaseFactory {
         const connectionFactory = this.connectionFactory;
         const connection = connectionFactory.createConnection();
         connection.connect();
+    }
+
+    createQuery(): DatabaseQuery {
+        return this.queryFactory.createQuery();
+    }
+
+    createResult(): DatabaseResult {
+        return this.resultFactory.createResult();
     }
 }
 
