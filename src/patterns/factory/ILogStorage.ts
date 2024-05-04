@@ -14,7 +14,7 @@ export interface LogInterface {
 
 export type LogFunction = <T extends any[]>(...log: T) => void;
 
-export interface ILogStorage {
+export default interface ILogStorage {
     storageType: LogStorageType,
     log: LogFunction
 }

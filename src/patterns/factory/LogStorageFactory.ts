@@ -1,4 +1,4 @@
-import { Environments, ILogStorage } from "./ILogStorage";
+import ILogStorage, { Environments } from "./ILogStorage";
 import CloudLogger from "./loggers/CloudLogger";
 import DbLogger from "./loggers/DbLogger";
 import FileLogger from "./loggers/FileLogger";
