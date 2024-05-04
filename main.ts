@@ -1,16 +1,12 @@
+import { Environments } from "./src/patterns/factory/ILogStorage";
 import LogStorageFactory from "./src/patterns/factory/LogStorageFactory";
 
-export enum Environments {
-    development, test, production
-}
-
-class Main {
+class FactoryPattern {
     constructor(){
-        const logFactory = new LogStorageFactory(Environments.development);
-        const logger = logFactory.logger;
-        logger.log("test");
-        logger.log(logger.storageType)
+        const logger = LogStorageFactory.createLogger(Environments.production);
+        logger.log("TEST LOG");
+        logger.log("[Logger Storage Type]:",logger.storageType);
     }
 }
 
-new Main();
+new FactoryPattern();

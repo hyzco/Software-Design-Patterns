@@ -1,14 +1,9 @@
-import { EStorageType, ILogStorage } from "../ILogStorage";
-import Logger from "../Logger";
+import { LogFunction, LogStorageType } from "../ILogStorage";
+import AbstractLogger from "../AbstractLogger";
 
-export default class FileLogger implements Logger{
-    storageType: EStorageType = EStorageType.file;
-    createLogger(): ILogStorage {
-        console.log("FileLogger is initiated here.");
-        return this;
-    }
- 
-    log(log: string): void {
-        console.log("[FileLogger] " + log)
+export default class FileLogger extends AbstractLogger {
+    storageType: LogStorageType = LogStorageType.file;
+    log: LogFunction = (...log: any[]): void => {
+        console.log("[FileLogger] " + log);
     }
 }
